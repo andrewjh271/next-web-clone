@@ -13,7 +13,6 @@ html {
 }
 
 body {
-  /* height: 100%; */
   margin: 0;
   font-family: "Jost", "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
 }
@@ -168,10 +167,10 @@ h3 {
 }
 
 #tnw-header-logo {
+  display: block;
   width: 62%;
-    height: 100%;
-    margin: auto;
-    display: block;
+  height: 100%;
+  margin: auto;
 }
 
 .header-left {
@@ -205,15 +204,16 @@ h3 {
 }
 
 .search-container {
+  float: right;
   height: 100%;
   border-left: 1px solid #dcdcdc;
   padding-right: 10px;
   padding-left: 12px;
-  float: right;
 }
 
 ion-icon[name="search"] {
   transform: rotateY(180deg);
+  font-size: 21px;
   color: #a2a2a2;
 }
 
@@ -256,8 +256,8 @@ main > :first-child {
   background-image:
     linear-gradient(to bottom right, #ff4be180, #008b3c2a),
     var(--preview-gradient),
-    url(/images/main/article1-gradient.png),
-    url(/images/main/article1.jpg);
+    url(images/main/article1-gradient.png),
+    url(images/main/article1.jpg);
   background-size: cover;
   background-position: center center;
 }
@@ -265,7 +265,7 @@ main > :first-child {
 main > :nth-child(2) {
   background-image:
     var(--preview-gradient),
-    url(/images/main/article2.jpg);
+    url(images/main/article2.jpg);
   background-size: cover;
   background-position: center center;
 }
@@ -273,7 +273,7 @@ main > :nth-child(2) {
 main > :nth-child(3) {
   background-image:
     var(--preview-gradient),
-    url(/images/main/article3.jpg);
+    url(images/main/article3.jpg);
   background-size: cover;
   background-position: center center;
 }
@@ -304,7 +304,6 @@ main > :nth-child(3) {
   }
 }
 
-
 .main-article {
   display: flex;
   flex-direction: column;
@@ -312,6 +311,7 @@ main > :nth-child(3) {
   color: white;
   padding: 15px;
   height: 100%;
+  transition: 0.5s;
 }
 
 .main-article:hover {
@@ -354,6 +354,7 @@ main > :nth-child(3) {
 .news-article img {
   height: 140px;
   width: 100%;
+  object-fit: cover;
 }
 
 .news-article h4 {
@@ -377,12 +378,19 @@ main > :nth-child(3) {
   }
 
   .news-article img {
+    float: left;
     height: 75px;
     width: 75px;
     margin-right: 15px;
-    float: left;
-    object-fit: cover;
   }
+
+  .position-left {
+    object-position: center left;
+  }
+  
+  .position-right {
+    object-position: center right;
+  }  
 
   .news-article h4 {
     font-size: 14px;
@@ -430,7 +438,7 @@ main > :nth-child(3) {
 }
 
 .fund-top-bar {
-  padding: 7px 7px 7px 43%;
+  padding: 7px 7px 7px 85px;
   font-size: 19px;
   line-height: 19px;
   color: white;
@@ -446,12 +454,12 @@ main > :nth-child(3) {
 .fund-price {
   font-size: 20px;
   color: black;
-  padding-left: 43%;
+  padding-left: 85px;
 }
 
 .fund-description {
   font-size: 14px;
-  padding-left: 43%;
+  padding-left: 85px;
 }
 
 .fund-facts {
@@ -511,6 +519,8 @@ ion-icon[name="pricetag"] {
   color: white;
   padding: 15px;
   height: 275px;
+  background-size: cover;
+  background-position: center center;
 }
 
 .popular h4 {
@@ -527,80 +537,60 @@ ion-icon[name="pricetag"] {
   background-image:
     var(--preview-gradient),
     url('images/categories/1.jpg');
-  background-size: cover;
-  background-position: center center;
 }
 
 .popular1 {
   background-image:
     var(--preview-gradient),
     url('images/categories/1.jpg');
-  background-size: cover;
-  background-position: center center;
 }
 
 .popular2 {
   background-image:
     var(--preview-gradient),
     url('images/categories/2.jpg');
-  background-size: cover;
-  background-position: center center;
 }
 
 .popular3 {
   background-image:
     var(--preview-gradient),
     url('images/categories/3.jpg');
-  background-size: cover;
-  background-position: center center;
 }
 
 .popular4 {
   background-image:
     var(--preview-gradient),
     url('images/categories/4.jpg');
-  background-size: cover;
-  background-position: center center;
 }
 
 .popular5 {
   background-image:
     var(--preview-gradient),
     url('images/categories/5.jpg');
-  background-size: cover;
-  background-position: center center;
 }
 
 .popular6 {
   background-image:
     var(--preview-gradient),
     url('images/categories/6.jpg');
-  background-size: cover;
-  background-position: center center;
 }
 
 .popular7 {
   background-image:
     var(--preview-gradient),
     url('images/categories/7.jpg');
-  background-size: cover;
-  background-position: center center;
 }
 
 .popular8 {
   background-image:
     var(--preview-gradient),
     url('images/categories/8.jpg');
-  background-size: cover;
-  background-position: center center;
 }
 
 .popular9 {
   background-image:
     var(--preview-gradient),
     url('images/categories/9.jpg');
-  background-size: cover;
-  background-position: center center;
 }
 
 .latest {
@@ -639,7 +629,7 @@ ion-icon[name="pricetag"] {
 
 .latest-list li {
   padding: 5px 0;
-    border-bottom: 1px solid #e4e4e4;
+  border-bottom: 1px solid #e4e4e4;
 }
 
 .latest-list li::marker {
@@ -677,7 +667,7 @@ ion-icon[name="pricetag"] {
   position: absolute;
   top: 0;
   right: 0;
-  width: 28%;
+  width: 29%;
 }
 
 .ribbon-discount {
@@ -719,25 +709,24 @@ footer {
 
 #footer-social a {
   display: inline-grid;
-    justify-items: center;
-    align-items: center;
-    padding: 12px;
-    border-radius: 50%;
-    background-color: #333;
-    width: 40px;
-    height: 40px;
-    margin: 8px;
+  justify-items: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin: 8px;
+  padding: 12px;
+  border-radius: 50%;
+  background-color: #333;
 }
 
 #footer-social a:hover {
   background: #0000;
-    box-shadow: inset 0 0 0 2px #333;
+  box-shadow: inset 0 0 0 2px #333;
 }
 
 #footer-social i {
   color: white;
   font-size: 16px;
-  
 }
 
 #footer-misc {
@@ -746,11 +735,11 @@ footer {
 }
 
 #footer-misc a {
-  color: gray;
-  font-size: 12px;
-  text-transform: uppercase;
   display: inline-block;
   margin: 7px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: gray;
 }
 
 #footer-misc a:hover {
@@ -758,13 +747,13 @@ footer {
 }
 
 #footer-end {
-  height: 97px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  background-color: black;
+  justify-content: center;
+  height: 97px;
   font-size: 14px;
-    color: #9a9a9a;
+  color: #9a9a9a;
+  background-color: black;
 }
 
 .footer-logo {
