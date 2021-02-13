@@ -697,3 +697,85 @@ ion-icon[name="pricetag"] {
 .reduced-price {
   color: #555;
 }
+
+/* Footer */
+
+footer {
+  margin-top: 6vh;
+}
+
+#footer-links {
+  height: 161px;
+  padding: 31px;
+  background-color: #131313;
+}
+
+#footer-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+#footer-social a {
+  display: inline-grid;
+    justify-items: center;
+    align-items: center;
+    padding: 12px;
+    border-radius: 50%;
+    background-color: #333;
+    width: 40px;
+    height: 40px;
+    margin: 8px;
+}
+
+#footer-social a:hover {
+  background: #0000;
+    box-shadow: inset 0 0 0 2px #333;
+}
+
+#footer-social i {
+  color: white;
+  font-size: 16px;
+  
+}
+
+#footer-misc {
+  display: flex;
+  justify-content: center;
+}
+
+#footer-misc a {
+  color: gray;
+  font-size: 12px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 7px;
+}
+
+#footer-misc a:hover {
+  color: white;
+}
+
+#footer-end {
+  height: 97px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  font-size: 14px;
+    color: #9a9a9a;
+}
+
+.footer-logo {
+  height: 10px;
+  margin: 0 5px;
+}
+
+@media (max-width: 770px) {
+  #footer-end {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+  }
+}
