@@ -72,6 +72,10 @@ a.headline:hover {
   color: var(--orange);
 }
 
+.white {
+  color: white;
+}
+
 h1,
 h2,
 h3,
@@ -81,13 +85,14 @@ h4 {
 
 h1 {
   font-size: 47px;
-  margin: 12px 0;
+  margin: 9px 0;
   line-height: 1;
 }
 
 h2 {
-  font-size: 26px;
+  font-size: 20px;
   line-height: 1.2;
+  margin: 2px 0;
 }
 
 h3 {
@@ -102,25 +107,138 @@ h3 {
 
 /* Headers */
 
-#top-container {
+#header-minor {
+  background-color: rgb(24, 24, 24);
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: 7px 10px;
+  font-size: 13px;
+}
+
+@media (max-width: 800px) {
+  #header-minor-right {
+    display: none;
+  }
+}
+
+#header-minor a {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#header-minor a:hover {
+  color: white;
+}
+
+#sticky-container {
   position: sticky;
   top: 0;
   z-index: 99;
 }
 
-#header-minor {
-  height: 30px;
-  background-color: rgb(141, 185, 156);
-}
-
 #header-major {
   height: 50px;
-  background-color: lightcyan;
+  background-color: white;
+  padding-left: 8px;
+}
+
+.header-extra {
+  display: none;
+  height: 100%;
+  background-color: #000;
+  width: 100px;
+  float: left;
+  margin-left: -8px;
+}
+
+@media (max-width: 750px) {
+  #header-minor {
+    display: none;
+  }
+
+  .header-extra {
+    display: block;
+  }
+
+  #notification-banner {
+    text-align: center;
+    font-size: 12px;
+  }
+}
+
+#tnw-header-logo {
+  width: 62%;
+    height: 100%;
+    margin: auto;
+    display: block;
+}
+
+.header-left {
+  float: left;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 650px) {
+  .header-left {
+    display: none;
+  }
+}
+
+#header-major > * {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#header-major a {
+  margin-left: 7px;
+  margin-right: 7px;
+  font-size: 14px;
+  color: #aaa;
+  text-transform: uppercase;
+}
+
+#header-major a:hover {
+  color: black;
+}
+
+.search-container {
+  height: 100%;
+  border-left: 1px solid #dcdcdc;
+  padding-right: 10px;
+  padding-left: 12px;
+  float: right;
+}
+
+ion-icon[name="search"] {
+  transform: rotateY(180deg);
+  color: #a2a2a2;
+}
+
+ion-icon[name="search"]:hover {
+  cursor: pointer;
+  color: #696969;
 }
 
 #notification-banner {
-  height: 30px;
-  background-color: goldenrod;
+  padding: 6px 15px;
+  background-color: #ffdd33;
+  font-size: 14px;
+  color: rgb(54, 54, 54);
+}
+
+#notification-banner a:hover {
+  color: inherit;
+}
+
+@media (max-width: 750px) {
+
+  #notification-banner {
+    text-align: center;
+    padding: 10px 5px;
+  }
 }
 
 /* Main */
@@ -160,6 +278,33 @@ main > :nth-child(3) {
   background-position: center center;
 }
 
+@media (max-width: 770px) {
+  main {
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 265px;
+  }
+
+  main :first-child {
+    grid-row: span 1;
+  }
+
+  main h1 {
+    font-size: 20px;
+    line-height: 1.2;
+    margin: 2px 0;
+  }
+
+  main datetime {
+    display: none;
+  }
+
+  #tnw-logo {
+    display: none;
+  }
+}
+
+
 .main-article {
   display: flex;
   flex-direction: column;
@@ -167,6 +312,11 @@ main > :nth-child(3) {
   color: white;
   padding: 15px;
   height: 100%;
+}
+
+.main-article:hover {
+  box-shadow: inset 50px 25px 183px 20px #ffffff36;
+  transition: 0.5s;
 }
 
 .main-article datetime {
@@ -197,7 +347,7 @@ main > :nth-child(3) {
   grid-column: 1 / -1;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
   flex-wrap: wrap;
 }
 
@@ -219,6 +369,30 @@ main > :nth-child(3) {
   color: rgb(59, 59, 59);
 }
 
+@media (max-width: 770px) {
+  #news {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-auto-rows: 88px;
+  }
+
+  .news-article img {
+    height: 75px;
+    width: 75px;
+    margin-right: 15px;
+    float: left;
+    object-fit: cover;
+  }
+
+  .news-article h4 {
+    font-size: 14px;
+  }
+
+  .news-article .small-text {
+    font-size: 12px;
+  }
+}
+
 /* Latest funding section */
 
 #funds-container {
@@ -228,11 +402,20 @@ main > :nth-child(3) {
   margin-top: 20px;
 }
 
+@media (max-width: 770px) {
+  #funds-container {
+    grid-template-columns: 1fr;
+  }
+}
+
 .fund {
-  /* width: 25%; */
   color: #555;
   position: relative;
   background-color: #fffaf8;
+}
+
+#funds .section-subheading {
+  font-weight: 200;
 }
 
 .fund a:hover {
@@ -243,7 +426,7 @@ main > :nth-child(3) {
   position: absolute;
   top: 8px;
   left: 12px;
-  width: 28%;
+  width: 60px;
 }
 
 .fund-top-bar {
