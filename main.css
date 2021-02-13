@@ -667,7 +667,7 @@ ion-icon[name="pricetag"] {
   position: absolute;
   top: 0;
   right: 0;
-  width: 29%;
+  width: 80px;
 }
 
 .ribbon-discount {
@@ -686,6 +686,31 @@ ion-icon[name="pricetag"] {
 
 .reduced-price {
   color: #555;
+}
+
+@media (max-width: 770px) {
+  #deals-container {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 75px;
+  }
+
+  .deal img {
+    float: left;
+    height: 75px;
+    width: 75px;
+    margin-right: 15px;
+    object-fit: cover;
+  }
+
+  .deal h4 {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .ribbon-discount,
+  .deal-ribbon {
+    display: none;
+  }
 }
 
 /* Footer */
