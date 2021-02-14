@@ -151,6 +151,11 @@ h3 {
   margin-left: -8px;
 }
 
+.header-extra:hover {
+  background-image: url('images/logo-hover.gif');
+  cursor: pointer;
+}
+
 @media (max-width: 750px) {
   #header-minor {
     display: none;
