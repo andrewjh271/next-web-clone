@@ -404,6 +404,10 @@ main > :nth-child(3) {
   .news-article .small-text {
     font-size: 12px;
   }
+
+  .news-article .light-gray a:hover {
+    color: #555;
+  }
 }
 
 /* Latest funding section */
