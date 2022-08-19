@@ -15,6 +15,7 @@ html {
 body {
   margin: 0;
   font-family: "Jost", "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+  min-width: 400px;
 }
 
 section {
@@ -371,7 +372,8 @@ main > :nth-child(3) {
   text-decoration-color: rgba(255, 67, 34, 0.329);
 }
 
-.news-article .gray a:hover {
+.news-article .gray a:hover,
+.news-article .light-gray a:hover {
   color: rgb(59, 59, 59);
 }
 
@@ -778,6 +780,26 @@ footer {
 
 #footer-misc a:hover {
   color: white;
+}
+
+@media (max-width: 550px) {
+  #footer-social a {
+    width: 30px;
+    height: 30px;
+    padding: 6px;
+  }
+
+  #footer-social i {
+    font-size: 12px;
+  }
+
+  #footer-misc a {
+    font-size: 10px;
+  }
+
+  #footer-links {
+    padding-top: 42px;
+  }
 }
 
 #footer-end {
